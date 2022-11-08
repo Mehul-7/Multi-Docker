@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true mshukla/react-test npm test
 
 after_success:
-  - docker build -t mshukla/multi-client ./client
-  - docker build -t mshukla/multi-nginx ./nginx
-  - docker build -t mshukla/multi-worker ./worker
-  - docker build -t mshukla/multi-server ./server
+  - docker build -t mshukla07/multi-client ./client
+  - docker build -t mshukla07/multi-nginx ./nginx
+  - docker build -t mshukla07/multi-worker ./worker
+  - docker build -t mshukla07/multi-server ./server
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push mshukla/multi-client
-  - docker push mshukla/multi-nginx
-  - docker push mshukla/multi-worker
-  - docker push mshukla/multi-server
+  - docker push mshukla07/multi-client
+  - docker push mshukla07/multi-nginx
+  - docker push mshukla07/multi-worker
+  - docker push mshukla07/multi-server
